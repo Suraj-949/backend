@@ -1,0 +1,18 @@
+package com.example.chatapp.controller;
+
+import com.example.chatapp.model.VideoNote;
+import com.example.chatapp.service.VideoNoteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/video-notes")
+public class VideoNoteController {
+    @Autowired
+    private VideoNoteService videoNoteService;
+
+    @PostMapping
+    public VideoNote createVideoNote(@RequestBody VideoNote videoNote) {
+        return videoNoteService.save(videoNote);
+    }
+}

@@ -1,0 +1,16 @@
+package com.example.chatapp.service;
+
+import com.example.chatapp.model.VideoNote;
+import com.example.chatapp.repository.VideoNoteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class VideoNoteService {
+    @Autowired
+    private VideoNoteRepository videoNoteRepository;
+
+    public VideoNote save(VideoNote videoNote) {
+        return videoNoteRepository.save(videoNote);
+    }
+}
